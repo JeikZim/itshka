@@ -1,0 +1,77 @@
+.menu-button
+    margin: auto
+    padding: 0
+
+    box-sizing: content-box
+    height: 100%//50%//35px
+    width: 64%//50px
+
+    transition: background 0.2s
+    background-color: rgba(0, 0, 0, .0)
+
+    &.active span
+        background: none
+
+    &.active span::before
+        top: 0
+        transform: rotate(-45deg)
+
+    &.active span::after
+        bottom: 0
+        transform: rotate(45deg)
+
+    &.active span::before, &.active span::after
+        transition-delay: 0.1s
+
+    & span
+        display: block
+        position: absolute
+        // top: 15px
+        left: 0
+        right: 0
+        height: 5px//6.25%
+        background-color: #ebebeb
+        transition: background-color 0.3s
+        border-radius: 25px
+
+        &::before, &::after
+            position: absolute
+            display: block
+            left: 0
+            width: 100%
+            height: 100%//5px/
+            background-color: #ebebeb
+            content: ""
+            transition-duration: 0.3s, 0.3s
+            transition-delay: 0.1s
+            border-radius: 25px
+
+        &::before
+            top: 300%//15px
+            transition-property: top, transform
+
+        &::after
+            bottom: 300%//15px
+            transition-property: bottom, transform
+
+@media screen and ( min-width: 481px )
+    .menu-button span
+        height: 0.42vh//5px//6.25%
+
+        &::before
+            top: 0.42vh * 4//400%//20px
+
+        &::after
+            bottom: 0.42vh * 4 //400%//20px
+
+@media screen and ( min-width: 1024px )
+    .header-menu-button
+        display: none
+
+    .menu-button
+        & span
+            height: 0
+        &::before
+            top: 0
+        &::after
+            bottom: 0

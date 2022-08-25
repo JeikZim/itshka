@@ -1,0 +1,216 @@
+@import ../animations/a-menu-button
+@import ../animations/a-search-button
+
+.header
+    height: $header-size
+    width: 100%
+    border-bottom: $main-borders
+    background-color: $main-primary-color
+    z-index: 102
+
+    &-menu-button, &-search-button, &-logo
+        height: $header-size
+        width: $header-size
+
+    &-logo a
+        display: block
+        height: 100%
+        width: 100%
+
+    &-menu-button
+        position: absolute
+        left: calc($side-spaces-screen-x - $header-size * 18/100)
+        top: 0
+
+    &-search-en-logo
+        position: absolute
+        right: 0
+        top: 0
+
+        display: flex
+        height: $header-size
+
+.logo
+    height: 75%
+    width: 75%
+    padding: 12.5%
+
+.search-button
+    box-sizing: content-box
+    height: 75%
+    width: 75%
+
+    margin: 12.5%
+    margin:
+        top: 15%
+        bottom: 10%
+
+    &-active
+
+        position: relative
+        left: calc(-100vw + 3 * $header-size)
+
+        height: 50%
+        width: 50%
+
+        margin:
+            left: 20%
+            right: 20%
+            top: 25%
+            bottom: 25%
+
+.header-search-field
+    @include flexClassic(center)
+    position: absolute
+    top: 0
+    right: $header-size //calc(1.5 * $header-size)
+
+    height: $header-size
+    width: calc(3 * $header-size + ($header-size * 3/4)*12.5/100 )
+
+    .search-field
+        appearance: none
+        border-radius: 20px
+        height: calc($header-size * 6/10 )
+        width: calc(3 * $header-size + ($header-size * 3/4)*12.5/100 )
+        padding-left: calc($header-size * 6/10 )
+        color: #424242
+        font:
+            family: $main-font-family
+            size: $buttons-font-size
+
+        &:focus
+            outline: none
+
+@media screen and ( min-width: 481px )
+    .header
+        height: $tablets-header-size
+
+        &-menu-button, &-search-button, &-logo
+            height: $tablets-header-size
+            width: $tablets-header-size
+
+        &-menu-button
+            left: $tablets-side-spaces-screen-x
+
+        &-search-en-logo
+            height: $tablets-header-size
+
+    .search-button
+        &-active
+            left: calc(-100vw + 3 * $tablets-header-size)
+
+            margin:
+                left: 35%
+                right: 15%
+                top: 25%
+                bottom: 25%
+
+    .header-search-field
+        right: $tablets-header-size
+        height: $tablets-header-size
+        width: calc( 100vw - 2*$tablets-header-size )
+
+        .search-field
+            border-radius: 25px
+            height: calc($tablets-header-size * 6/10 )
+            width: calc( 100vw - 2.5*$tablets-header-size )
+            padding-left: calc($tablets-header-size * 6/10 )
+            font-size: $tablets-buttons-font-size
+
+@media screen and ( min-width: 1024px )
+    .header
+        height: $small-desktops-header-size
+        width: $small-desktops-menu-width
+        background-color: $menu-primary-color
+        border-bottom: none
+
+        &-logo
+            padding-right: 5px
+            height: calc($small-desktops-header-size / 1.25)
+            width: calc($small-desktops-header-size / 1.25)
+
+        &-search-button
+            height: calc($small-desktops-header-size / 1.25)
+            width: calc($small-desktops-header-size / 1.25)
+
+        &-search-en-logo
+            align-items: center
+            height: $small-desktops-header-size
+
+    .search-button-active
+        left: calc(-#{$small-desktops-menu-width} + 2 * (#{$small-desktops-header-size} / 1.25))
+
+    .header-search-field
+        right: calc( ($small-desktops-header-size / 1.25) )
+        height: $small-desktops-header-size
+        width: calc( $small-desktops-menu-width - 1.1 * ($small-desktops-header-size / 1.25) )
+
+        .search-field
+            border-radius: 25px
+            height: calc($small-desktops-header-size * 5/10 )
+            width: calc( $small-desktops-menu-width - 1.3 * ($small-desktops-header-size / 1.25) )
+            padding-left: calc($small-desktops-header-size * 6/10 )
+            font-size: $small-desktops-buttons-font-size
+
+@media screen and ( min-width: 1201px )
+    .header
+        height: $desktops-header-size
+        width: $desktops-menu-width
+
+        &-logo
+            height: calc($desktops-header-size / 1.25)
+            width: calc($desktops-header-size / 1.25)
+
+        &-search-button
+            height: calc($desktops-header-size / 1.25)
+            width: calc($desktops-header-size / 1.25)
+
+        &-search-en-logo
+            height: $desktops-header-size
+
+    .search-button-active
+        left: calc(-#{$desktops-menu-width} + 2 * (#{$desktops-header-size} / 1.25))
+
+    .header-search-field
+        right: calc( ($desktops-header-size / 1.25) )
+        height: $desktops-header-size
+        width: calc( $desktops-menu-width - 1.1 * ($desktops-header-size / 1.25) )
+
+        .search-field
+            border-radius: 25px
+            height: calc($desktops-header-size * 5/10 )
+            width: calc( $desktops-menu-width - 1.3 * ($desktops-header-size / 1.25) )
+            padding-left: calc($desktops-header-size * 6/10 )
+            font-size: $desktops-buttons-font-size
+
+@media screen and ( min-width: $fullhd-width )
+    .header
+        height: $fullhd-header-size
+        width: $fullhd-menu-width
+
+        &-logo
+            height: calc($fullhd-header-size / 1.25)
+            width: calc($fullhd-header-size / 1.25)
+
+        &-search-button
+            height: calc($fullhd-header-size / 1.25)
+            width: calc($fullhd-header-size / 1.25)
+
+        &-search-en-logo
+            height: $fullhd-header-size
+
+    .search-button-active
+        left: calc(-#{$fullhd-menu-width} + 2.2 * (#{$fullhd-header-size} / 1.25))
+
+    .header-search-field
+        right: calc( ($fullhd-header-size / 1.25) )
+        height: $fullhd-header-size
+        width: calc( $fullhd-menu-width - 1.3 * ($fullhd-header-size / 1.25) )
+
+        .search-field
+            border-radius: 25px
+            height: calc($fullhd-header-size * 5/10 )
+            width: calc( $fullhd-menu-width - 1.5 * ($fullhd-header-size / 1.25) )
+            padding-left: calc($fullhd-header-size * 6/10 )
+            font-size: $fullhd-buttons-font-size

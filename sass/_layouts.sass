@@ -1,0 +1,110 @@
+.l-header
+    position: fixed
+    top: 0
+    left: 0
+
+.l-menu
+    position: fixed
+    top: calc(#{$header-size} - 1px)
+    left: -100vw
+    transition: left ease 0.1s
+
+.l-filters
+    position: fixed
+    // top: $header-size
+    // left: 0
+
+.l-feed
+    position: relative
+    // top: calc($header-size + $tags-field-height)
+    // left: 0
+
+@media screen and ( min-width: 320px ) and ( max-width: 480px )
+
+    .l-menu
+        top: calc(#{$header-size} - 1px)
+
+    .l-filters
+        top: $header-size
+        left: 0
+
+    .l-feed
+        top: calc($header-size + $tags-field-height)
+        left: 0
+
+@media screen and ( min-width: 481px )
+
+    .l-menu
+        top: calc(#{$tablets-header-size} - 1px)
+
+    .l-filters
+        top: $tablets-header-size
+        right: 0
+
+    .l-feed
+        top: 0
+
+    .main
+        position: relative
+        top: $tablets-header-size
+
+@media screen and ( min-width: 1024px )
+
+    .l-menu
+        top: $small-desktops-header-size
+        left: 0
+
+    .l-filters
+        top: 0
+        right: 0
+        left: unset
+        padding-left: $small-desktops-tags-en-filters-padding
+
+    .l-feed
+        position: relative
+        top: 0
+        left: 0
+
+    .main
+        position: relative
+        top: 0
+        left: $small-desktops-menu-width
+
+@media screen and ( min-width: 1201px )
+
+    .l-menu
+        top: $desktops-header-size
+
+    .l-filters
+        padding-left: $desktops-tags-en-filters-padding
+
+    .main
+        left: $desktops-menu-width
+
+@media screen and ( min-width: $fullhd-width )
+    .l-header
+        position: absolute
+        top: 0
+        left: 0
+
+    .l-menu
+        position: absolute
+        top: $fullhd-header-size
+        left: 0
+
+    .l-filters
+        position: absolute
+        top: 0
+        right: 0
+        left: unset
+        padding-left: $fullhd-tags-en-filters-padding
+
+    .l-feed
+        position: absolute
+        top: 0
+        left: 0
+
+    .main
+        position: absolute
+        top: 0
+        left: $fullhd-menu-width

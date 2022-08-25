@@ -1,0 +1,205 @@
+// Colors
+$base-color: #EBEBEB
+
+$main-primary-color: #303030
+$menu-primary-color: #272727
+$menu-secondary-color: #242424
+$this-white-color: #EBEBEB
+$buttons-disable-color: #DDDDDD
+$buttons-enable-color: #424242
+$articles-bg-color: #424242
+$articles-text-color: #EBEBEB
+$small-text-color: #DDDDDD
+
+// Fonts
+$main-font-family: 'Ubuntu', 'Inter', sans-serif
+
+$big-font-size: 28px
+$buttons-font-size: 23px
+$h1-font-size: 18px
+$snippet-font-size: 14px
+$info-font-size: 12px
+
+// Fonts for Tablets
+
+$tablets-big-font-size: 36px
+$tablets-buttons-font-size: 25px
+$tablets-h1-font-size: 20px
+$tablets-snippet-font-size: 16px
+$tablets-info-font-size: 14px
+
+// Fonts for 1024-1200
+
+$small-desktops-big-font-size: 26px
+$small-desktops-buttons-font-size: 20px
+$small-desktops-h1-font-size: 18px
+$small-desktops-snippet-font-size: 14px
+$small-desktops-info-font-size: 12px
+
+// Fonts for 1201-1536
+
+$desktops-big-font-size: 26px
+$desktops-buttons-font-size: 20px
+$desktops-h1-font-size: 18px
+$desktops-snippet-font-size: 14px
+$desktops-info-font-size: 12px
+
+// Fonts for 1536 and more
+
+$fullhd-big-font-size: 28px
+$fullhd-buttons-font-size: 20px
+$fullhd-h1-font-size: 21px
+$fullhd-snippet-font-size: 18px
+$fullhd-info-font-size: 14px
+
+// Sizes
+$header-size: 19.3vw //9vh
+$tags-field-height: 50px
+$tags-field-width: 100vw
+$menu-height: 50px
+$menu-width: 100vw
+
+$l-tags-height: 2 * $tags-field-height
+$l-filters-height: 3 * $tags-field-height + 10px
+$l-tags-en-filters-height: $l-tags-height + $l-filters-height
+
+$side-spaces-screen-x: 15px
+$static-el-height: calc($tags-field-height * 3 * 25/100)
+$tags-en-filters-padding: 20px
+
+$feed-width: 100vw
+
+// Sizes for Tablets
+
+$tablets-header-size: 9.5vh //9vh
+$tablets-tags-en-filters-height: 100vh - $tablets-header-size
+$tablets-tags-field-height: 41px
+$tablets-tags-field-width: 28vw//28vw
+$tablets-menu-height: 50px
+$tablets-menu-width: 100vw//calc(72vw - 20px)
+
+$tablets-side-spaces-screen-x: 15px
+$tablets-static-el-height: 35px
+$tablets-tags-en-filters-padding: 20px
+
+$tablets-feed-width: calc(72vw - 20px)
+
+// Sizes for 1024-1200
+
+$small-desktops-header-size: 13.88vh//100px
+$small-desktops-tags-en-filters-height: calc(100vh - $small-desktops-header-size)
+$small-desktops-tags-field-height: 35px
+$small-desktops-tags-field-width: 23.4vw
+$small-desktops-menu-height: calc(100vh - $small-desktops-header-size)
+$small-desktops-menu-width: 26.6vw
+
+$small-desktops-side-spaces-screen-x: 2.5vw // 20px или 40px
+$small-desktops-static-el-height: 32px
+$small-desktops-tags-en-filters-padding: 20px
+
+$small-desktops-feed-width: calc(100vw - $small-desktops-menu-width - $small-desktops-tags-field-width - $small-desktops-tags-en-filters-padding)
+
+// Sizes for 1201-1536
+
+$desktops-header-size: 12.2vh//100px
+$desktops-tags-en-filters-height: calc(100vh - $desktops-header-size)
+$desktops-tags-field-height: 35px
+$desktops-tags-field-width: 24vw
+$desktops-menu-height: calc(100vh - $desktops-header-size)
+$desktops-menu-width: 25vw
+
+$desktops-side-spaces-screen-x: 2.5vw // 20px или 40px
+$desktops-static-el-height: 32px
+$desktops-tags-en-filters-padding: 20px
+
+$desktops-feed-width: calc(100vw - $desktops-menu-width - $desktops-tags-field-width - $desktops-tags-en-filters-padding)
+
+// Sizes for 1536 and more
+
+$fullhd-width: 1600px//1536px
+
+$fullhd-header-size: 100px
+$fullhd-tags-en-filters-height: calc(100vh - $fullhd-header-size)
+$fullhd-tags-field-height: 35px
+$fullhd-tags-field-width: 300px
+$fullhd-menu-height: calc(100vh - $fullhd-header-size)
+$fullhd-menu-width: 400px
+
+$fullhd-side-spaces-screen-x: 20px // 20px или 40px
+$fullhd-static-el-height: 32px
+$fullhd-tags-en-filters-padding: 20px
+
+$fullhd-main-width: calc($fullhd-width - $fullhd-menu-width)
+$fullhd-feed-width: calc($fullhd-main-width - $fullhd-tags-en-filters-padding - $fullhd-tags-field-width - 10px)
+
+// Miscs
+$main-borders: 1px solid #FFFFFF25
+
+// Mixines
+@mixin flexClassic($justify-content: normal)
+    display: flex
+    align-items: center
+    justify-content: $justify-content
+
+@mixin articleTextConfig()
+    margin: 0
+    margin-left: 20px
+    margin-right: 20px
+
+@mixin scrollbar()
+    &::-webkit-scrollbar
+        appearance: none
+        width: 10px
+
+    &::-webkit-scrollbar-thumb
+        border-radius: 0//10px
+        border: none//2px solid transparent
+        background-clip: content-box
+        background-color: darken($buttons-enable-color, 5%)
+
+    &::-webkit-scrollbar-thumb:hover
+        background-color: $buttons-enable-color
+
+    &::-webkit-scrollbar-thumb:active
+        background-color: lighten($buttons-enable-color, 5%)
+
+    &::-webkit-scrollbar-track
+        background: darken($main-primary-color, 5%)
+
+// Classes
+%TagButtonClass
+    $tag-button-height: 36px
+    $tag-button-spaces-y: 7px
+    $tag-button-spaces-x: 10px
+    $tag-button-paddings: 12.5px
+    $tag-button-radius: 25px
+
+    display: flex
+    align-items: center
+    flex-direction: row
+    height: $tag-button-height
+    top: $tag-button-spaces-y
+    margin-left: 0 //$tag-button-spaces-x
+    margin-right: $tag-button-spaces-x
+    padding-right: $tag-button-paddings
+    padding-left: $tag-button-paddings
+
+    border-radius: $tag-button-radius
+
+    & span, & pre
+        display: block
+        font-size: $buttons-font-size
+
+.buttons
+    display: block
+    position: relative
+
+    appearance: none
+    box-shadow: none
+    border: none
+
+    cursor: pointer
+    overflow: hidden
+
+    &:focus
+        outline: none

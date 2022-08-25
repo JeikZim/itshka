@@ -1,0 +1,155 @@
+.menu
+    height: calc(100vh - #{$header-size} + 1px)
+    width: $menu-width
+    background-color: $menu-primary-color
+    overflow-x: hidden
+    overflow-y: auto
+    z-index: 101
+
+    &::-webkit-scrollbar
+        width: 0
+
+    &-nav
+        position: relative
+        top: $menu-height
+        height: 320px//35.5vh
+        background-color: $menu-secondary-color
+
+        & ul
+            height: 100%
+
+        & li
+            display: flex
+            height: 25%
+            padding-left: 15.7%
+            align-items: center
+            text-decoration: underline
+
+        & a, & li
+            color: $this-white-color
+            font-size: $big-font-size//1.35em
+
+            &:hover
+                text-decoration: none
+
+    &-footer
+        position: relative
+        top: 100px
+        // height: 150px//35.5vh
+        padding-bottom: 50px
+
+        & .footer-container
+            padding-left: 15.7%
+
+        & span.copyright
+            color: $this-white-color
+            font-size: $info-font-size + 2px
+
+        & span.footer-text
+            display: block
+            margin-bottom: 5px
+
+        & a, & span
+            color: $small-text-color
+            font-size: $info-font-size
+
+@media screen and ( min-width: 481px )
+    .menu
+        height: calc(100vh - #{$tablets-header-size} + 1px)
+        width: $tablets-menu-width
+        &-nav
+            top: $tablets-menu-height
+            height: 520px//35.5vh
+
+            & a, & li
+                font-size: $tablets-big-font-size//1.35em
+
+        &-footer
+            & span.copyright
+                font-size: $tablets-info-font-size + 2px
+
+            & a, & span
+                font-size: $tablets-info-font-size
+
+            & span.footer-text
+                margin-bottom: 10px
+
+@media screen and ( min-width: 1024px )
+    .menu
+        height: $small-desktops-menu-height
+        width: $small-desktops-menu-width
+        @include scrollbar
+
+        &-nav
+            top: 0
+            height: $small-desktops-menu-width
+
+            & li
+                padding-left: 25px
+
+            & a, & li
+                font-size: $small-desktops-big-font-size
+
+        &-footer
+            top: 35px
+
+            & .footer-container
+                padding-left: 25px
+
+            & span.copyright
+                font-size: $small-desktops-info-font-size + 2px
+
+            & a, & span
+                font-size: $small-desktops-info-font-size
+
+            & span.footer-text
+                margin-bottom: 7px
+
+@media screen and ( min-width: 1201px )
+    .menu
+        height: $desktops-menu-height
+        width: $desktops-menu-width
+
+        &-nav
+            height: $desktops-menu-width
+
+            & li
+                padding-left: 45px
+
+            & a, & li
+                font-size: $desktops-big-font-size
+
+        &-footer
+            & .footer-container
+                padding-left: 45px
+
+            & span.copyright
+                font-size: $desktops-info-font-size + 2px
+
+            & a, & span
+                font-size: $desktops-info-font-size
+
+@media screen and ( min-width: $fullhd-width )
+    .menu
+        height: $fullhd-menu-height
+        width: $fullhd-menu-width
+        overflow-y: hidden
+
+        &-nav
+            height: $fullhd-menu-width
+
+            & li
+                padding-left: 50px
+
+            & a, & li
+                font-size: $fullhd-big-font-size
+
+        &-footer
+            & .footer-container
+                padding-left: 50px
+
+            & span.copyright
+                font-size: $fullhd-info-font-size + 2px
+
+            & a, & span
+                font-size: $fullhd-info-font-size

@@ -1,0 +1,70 @@
+body
+    height: 100%
+    background-color: darken($main-primary-color, 5%)
+
+.main
+    background-color: $main-primary-color
+
+html, body, fieldset, button, p, input, form, optgroup, option
+    margin: 0
+    padding: 0
+
+article, aside, nav, section h1
+    margin-block-start: 0
+    margin-block-end: 0
+
+legend:hover
+    cursor: default
+
+h1, h2, h3, p, span, pre, address, li, a, q, blockquote, label, legend, input, select, option
+    color: $base-color
+    text-decoration: none
+    font:
+        family: $main-font-family
+        size: 14px
+        weight: 400
+        style: normal
+
+a
+    &:hover
+        color: $base-color
+    &:focus
+        color: $base-color
+
+ul
+    list-style: none
+    list-style-type: none
+    list-style-position: inside
+    padding: 0
+    margin: 0
+    li
+        display: block
+        list-style: none
+        list-style-type: none
+
+.main
+    overflow: hidden
+
+fieldset, input
+    border: none
+
+input[type="number"]
+    background-color: $this-white-color
+
+input[type="checkbox"]
+    cursor: pointer
+
+input[type=text]::-ms-clear, input[type=text]::-ms-reveal
+    display: none
+    width: 0
+    height: 0
+
+input::-webkit-search-decoration, input::-webkit-search-cancel-button, input::-webkit-search-results-button, input::-webkit-search-results-decoration
+    display: none
+
+@media screen and ( min-width: $fullhd-width )
+    body
+        position: relative
+        height: 100vh
+        width: $fullhd-width//1536px
+        margin: auto

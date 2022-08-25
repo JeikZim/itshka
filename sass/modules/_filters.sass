@@ -1,0 +1,714 @@
+@import ../animations/_a-filters-buttons
+
+.l-filters
+    z-index: 100
+    border-bottom: $main-borders
+
+.toggles, .tags
+    display: flex
+    height: $tags-field-height
+    width: $tags-field-width
+    overflow-x: auto
+    background-color: $main-primary-color
+
+    &-tags-button-wrapper-mobile, &-filters-button-wrapper-mobile, &-items-wrapper
+        height: $tags-field-height
+
+    &-tags-button-wrapper-mobile[hidden], &-filters-button-wrapper-mobile[hidden]
+        display: none
+
+    @media (max-width: 481px)
+        &-tags-button-wrapper-mobile[hidden], &-filters-button-wrapper-mobile[hidden]
+            display: block
+
+.toggles
+    position: relative
+    top: 0
+    left: $side-spaces-screen-x
+    padding-right: 5px
+
+    & .buttons
+        @extend %TagButtonClass
+
+        & span
+            padding-left: 5px
+
+        & .svg
+            display: block
+            height: 25px
+
+.tags
+    position: relative
+    top: 0
+    left: $side-spaces-screen-x
+
+    &-items-wrapper
+        padding-right: 0
+
+    &::-webkit-scrollbar
+        height: 0
+
+    & .buttons
+        @extend %TagButtonClass
+
+        box-sizing: border-box
+
+        & span, & pre
+            padding-left: 0
+
+.filters
+    display: flex
+    flex-direction: row
+    overflow-x: auto
+    height: 3 * $tags-field-height
+    width: 100vw
+    background-color: $main-primary-color
+    padding-bottom: 10px
+
+    position: relative
+    top: 0 //50 ЕСЛИ ТЕГИ НЕ ОТКРЫТЫ.100 ЕСЛИ ТЕГИ ОТКРЫТЫ
+    left: 0
+
+    &::-webkit-scrollbar
+        height: 0
+
+    &-static, &-difficult, &-theme
+        display: block
+        height: 3*$tags-field-height
+
+    &-static
+        min-width: 200px
+
+        & legend, & > label
+            @include flexClassic(center)
+
+            height: $static-el-height
+            width: 100%
+
+            font-size: $buttons-font-size - 3px
+            color: $this-white-color
+
+        &-wrapper
+            @include flexClassic(center)
+            height: $static-el-height
+            width: 100%
+
+            & label, & span
+                height: calc($tags-field-height / 2)
+                width: 20%
+                font-size: $h1-font-size
+                color: $this-white-color
+                text-align: center
+
+            & input[type="number"]
+                -webkit-appearance: none
+                -moz-appearance: none
+                -ms-appearance: none
+                appearance: none
+
+                box-sizing: border-box
+
+                height: calc($tags-field-height / 2)
+                border-radius: 10px
+                width: 17.5%
+                text-align: center
+
+                font-size: $buttons-font-size - 5px
+                color: $menu-primary-color
+
+            & input:focus
+                outline: none
+
+        &-select
+            display: block
+            height: calc($tags-field-height / 2)
+            width: 75%
+            border-radius: 7px
+
+            box-sizing: border-box
+
+            text-align: center
+            font-size: $buttons-font-size - 7px
+            color: $menu-primary-color
+
+            appearance: none
+            outline: none
+
+            & option
+                height: 100%
+                width: 50px
+
+                text-align: center
+                font-size: inherit
+                color: inherit
+
+            &-wrapper
+                @include flexClassic(center)
+
+                height: calc($tags-field-height * 3 * 25/100)
+                width: 100%
+
+    &-difficult
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        min-width: 150px
+        border-right: $main-borders
+        border-left: $main-borders
+        background-color: $main-primary-color
+
+        &-wrapper
+            display: flex
+            height: 25%
+            color: $this-white-color
+
+            & input, & label
+                display: block
+                height: 100% //$tags-field-height
+
+            & input[type='checkbox']
+                box-sizing: border-box
+                width: 15%
+                margin-left: 7.5%
+                margin-right: 7.5%
+
+            & label
+                @include flexClassic()
+
+                font-size: $buttons-font-size
+                color: inherit
+                width: 80%
+
+    &-theme
+        display: flex
+        align-items: flex-start
+        flex-direction: column
+        flex-wrap: wrap
+
+        height: 90%
+        min-width: 200px
+
+        padding-top: 2.5%
+
+        &-wrapper
+            @include flexClassic(normal)
+
+            height: 20%
+            color: $this-white-color
+
+            & input[type='checkbox'], & label
+                display: block
+
+            & input[type='checkbox']
+
+                height: 75%
+                width: 40px
+
+            & label
+                @include flexClassic(normal)
+
+                padding-right: $side-spaces-screen-x
+
+                font-size: $h1-font-size
+                color: inherit
+                min-width: 100px
+
+    &-submit
+        height: 70%
+        width: 150px
+
+        border-radius: 25px
+
+        font-size: $buttons-font-size
+        color: $this-white-color
+
+        background-color: $buttons-enable-color
+        & span
+            display: block
+            font-size: 23px
+
+        &-wrapper
+            @include flexClassic(center)
+            height: $tags-field-height
+            background-color: $main-primary-color
+
+.tags-button-wrapper[hidden], .filters-button-wrapper[hidden]
+    display: block
+
+@media (max-width: 480px)
+    .tags-button-wrapper[hidden], .filters-button-wrapper[hidden]
+        display: none
+
+.tags-button-wrapper ,.filters-button-wrapper
+    position: relative
+    left: 0
+
+    & .buttons
+        @extend %TagButtonClass
+        top: 0
+        margin: 0
+
+        & span
+            padding-left: 5px
+
+        & .svg
+            display: block
+            height: 25px
+
+@media screen and ( min-width: 481px ) //and ( max-width: 1023px )
+
+    .l-filters
+        padding-left: $tablets-tags-en-filters-padding
+        height: $tablets-tags-en-filters-height
+        width: $tablets-tags-field-width
+        border-bottom: none
+        border-left: $main-borders
+        background-color: $main-primary-color
+
+    .toggles
+        display: none
+
+    .tags-en-filters-wrapper
+        @include scrollbar
+        position: relative
+        top: 0
+        right: 0
+        height: $tablets-tags-en-filters-height
+        width: 100%
+        overflow-y: auto
+
+    .tags-button-wrapper ,.filters-button-wrapper
+        top: 20px
+        height: 36px
+
+        & .buttons
+            top: 0
+
+            & span
+                padding-left: 5px
+
+            & .svg
+                height: 25px
+
+    .tags
+        display: block//flex
+
+        position: relative
+        top: 35px
+        left: 0
+
+        height: unset//calc((100vh - $tablets-header-size)/2 - 71px)//$tablets-tags-field-height
+        width: calc($tablets-tags-field-width - 5px)
+
+        overflow-x: auto
+
+        &-items-wrapper
+            display: inline-block
+            height: $tablets-tags-field-height
+            // margin-left: 5px
+            padding-left: 0
+
+        &::-webkit-scrollbar
+            height: 0
+
+        & .buttons
+            top: 0
+            bottom: 5px
+            margin: 0
+            & span, & pre
+                padding-left: 0
+
+    .filters-button-wrapper
+        top: 55px
+
+    .filters
+        display: flex
+        flex-direction: column
+        overflow-x: auto
+        height: unset//60vh//unset
+        width: 100%
+        padding-top: 10px
+        padding-bottom: 0
+
+        position: relative
+        top: 70px //50 ЕСЛИ ТЕГИ НЕ ОТКРЫТЫ.100 ЕСЛИ ТЕГИ ОТКРЫТЫ
+        left: 0
+
+        &::-webkit-scrollbar
+            height: 0
+
+        &-static, &-difficult, &-theme
+            height: 20vh
+
+        &-static
+            width: calc( 100% - 10px )
+            height: unset
+            padding-bottom: 10px
+
+            & legend, & > label
+                @include flexClassic(flex-start)
+
+                height: $tablets-static-el-height
+                width: 100%
+
+                font-size: $tablets-buttons-font-size - 3px
+
+            &-wrapper
+                @include flexClassic(flex-start)
+                height: $tablets-static-el-height
+                width: 100%
+
+                & label, & span
+                    @include flexClassic(flex-start)
+                    height: $tablets-static-el-height
+                    width: 14%
+                    font-size: $tablets-h1-font-size
+
+                & label:nth-child(3n)
+                    @include flexClassic(center)
+                    width: 17%
+
+                & input[type="number"]
+                    height: $tablets-static-el-height
+                    border-radius: 10px
+                    width: 17.5%
+
+                    margin-right: 5px
+
+                    font-size: $tablets-buttons-font-size - 5px
+
+                & input[type="number"]:nth-child(2n)
+                    margin-right: 0
+
+                & input[type="number"]:nth-child(4n)
+                    margin-right: 5px
+
+            &-select
+                @include flexClassic(center)
+                height: $tablets-static-el-height - 10px
+                width: 85%
+                border-radius: 10px
+
+                font-size: $tablets-buttons-font-size - 7px
+
+                & option
+                    height: 100%
+                    width: 100%
+
+                &-wrapper
+                    @include flexClassic(flex-start)
+                    height: $tablets-static-el-height
+
+        &-difficult
+            justify-content: space-evenly
+
+            height: 180px
+            width: calc( 100% - 10px )
+            border-right: none
+            border-left: none
+            border-top: $main-borders
+            border-bottom: $main-borders
+
+            &-wrapper
+
+                & input[type='checkbox']
+                    box-sizing: border-box
+                    width: 10%
+                    margin-left: 0
+                    margin-right: 10px
+
+                & label
+                    @include flexClassic()
+
+                    font-size: $tablets-buttons-font-size
+                    width: 80%
+
+        &-theme
+            display: flex
+            align-items: flex-start
+            flex-direction: column
+            flex-wrap: wrap
+
+            height: unset
+            width: calc( 100% - 10px )
+            padding-top: 10px
+
+            overflow: auto
+
+            &::-webkit-scrollbar
+                height: 0
+
+            &-wrapper
+                @include flexClassic(normal)
+                height: 45px
+
+                & input[type='checkbox'], & label
+                    margin-left: 0
+                    margin-right: 10px
+
+                & input[type='checkbox']
+                    box-sizing: border-box
+                    height: 75%
+                    width: 25px
+
+                & label
+                    @include flexClassic(normal)
+                    padding-right: 0
+                    font-size: $tablets-h1-font-size
+                    width: unset
+
+        &-submit
+            height: 50px
+            width: 175px
+
+            border-radius: 25px
+
+            font-size: $tablets-buttons-font-size
+
+            & span
+                display: block
+                font-size: 23px
+
+            &-wrapper
+                position: relative
+                top: 90px
+                padding-bottom: 90px
+                @include flexClassic(flex-start)
+                height: $tablets-tags-field-height
+
+@media screen and ( min-width: 1024px ) //and ( max-width: 1200px )
+
+    .l-filters
+        height: 100vh
+        width: $small-desktops-tags-field-width
+
+    .tags-en-filters-wrapper
+        height: 100vh
+        overflow-x: hidden
+
+    .tags-button-wrapper ,.filters-button-wrapper
+        top: 40px
+        height: 36px
+
+        & .buttons
+            & span
+                padding-left: 5px
+
+            & .svg
+                height: 24px
+
+    .tags
+        top: 40px + 15px
+        width: calc($small-desktops-tags-field-width - 5px)
+
+        &-items-wrapper
+            height: $small-desktops-tags-field-height
+
+        & .buttons
+            height: 30px
+
+            & span, & pre
+                font-size: $small-desktops-buttons-font-size
+
+    .filters-button-wrapper
+        top: 40px + 15px + 20px
+
+    .filters
+        padding-top: 0
+        top: 40px + 15px + 20px + 15px
+
+        &-static, &-difficult, &-theme
+            min-height: 15vh
+
+        &-static
+
+            & legend, & > label
+                height: $small-desktops-static-el-height
+                font-size: $small-desktops-buttons-font-size - 3px
+
+            &-wrapper
+                height: $small-desktops-static-el-height
+
+                & label, & span
+                    height: $small-desktops-static-el-height
+                    font-size: $small-desktops-h1-font-size
+
+                & input[type="number"]
+                    height: $small-desktops-static-el-height - 8px
+                    font-size: $small-desktops-buttons-font-size - 5px
+
+            &-select
+                height: $small-desktops-static-el-height - 10px
+                width: 175px
+                font-size: $small-desktops-buttons-font-size - 7px
+
+                &-wrapper
+                    height: $small-desktops-static-el-height
+
+        &-difficult
+            &-wrapper
+                & input[type='checkbox']
+                    width: 18px
+
+                & label
+                    font-size: $small-desktops-buttons-font-size + 2px
+
+        &-theme
+            &-wrapper
+                height: 40px
+
+                & input[type='checkbox']
+                    width: 18px
+
+                & label
+                    font-size: $small-desktops-h1-font-size + 2px
+
+        &-submit
+
+            font-size: $small-desktops-buttons-font-size
+
+            & span
+                display: block
+                font-size: 23px
+
+            &-wrapper
+                top: 40px + 15px + 20px + 15px + 20px
+                padding-bottom: 35px
+                height: $small-desktops-tags-field-height
+
+@media screen and ( min-width: 1201px ) //and ( max-width: 1200px )
+
+    .l-filters
+        width: $desktops-tags-field-width
+
+    .tags-en-filters-wrapper
+        // overflow-x: hidden
+        @include scrollbar
+
+    .tags
+        width: calc($desktops-tags-field-width - 10px)
+
+        &-items-wrapper
+            height: $desktops-tags-field-height
+
+        & .buttons
+            & span, & pre
+                font-size: $desktops-buttons-font-size
+
+    .filters
+
+        &-static
+            & legend, & > label
+                height: $desktops-static-el-height
+                font-size: $desktops-buttons-font-size - 3px
+
+            &-wrapper
+                height: $desktops-static-el-height
+
+                & label, & span
+                    height: $desktops-static-el-height
+                    font-size: $desktops-h1-font-size
+
+                & input[type="number"]
+                    height: $desktops-static-el-height - 8px
+                    font-size: $desktops-buttons-font-size - 5px
+
+            &-select
+                height: $desktops-static-el-height - 10px
+                font-size: $desktops-buttons-font-size - 7px
+
+                &-wrapper
+                    height: $desktops-static-el-height
+
+        &-difficult
+            &-wrapper
+                & label
+                    font-size: $desktops-buttons-font-size + 2px
+
+        &-theme
+            &-wrapper
+                & label
+                    font-size: $desktops-h1-font-size + 2px
+
+        &-submit
+
+            font-size: $desktops-buttons-font-size
+
+            &-wrapper
+                height: $desktops-tags-field-height
+
+@media screen and ( min-width: $fullhd-width )
+
+    .l-filters
+        height: unset
+        width: $fullhd-tags-field-width
+
+    .tags-en-filters-wrapper
+        overflow-y: hidden
+        height: unset
+
+    .tags-button-wrapper
+        margin-top: 40px
+        top: 0
+
+    .filters-button-wrapper
+        margin-top: 20px
+        top: 0
+
+    .tags
+        margin-top: 15px
+        top: 0
+        width: calc($fullhd-tags-field-width - 15px)
+
+        &-items-wrapper
+            height: $fullhd-tags-field-height
+
+        & .buttons
+            & span, & pre
+                font-size: $fullhd-buttons-font-size
+
+        &-static
+            & legend, & > label
+                height: $fullhd-static-el-height
+                font-size: $fullhd-buttons-font-size - 3px
+
+            &-wrapper
+                height: $fullhd-static-el-height
+
+                & label, & span
+                    height: $fullhd-static-el-height
+                    font-size: $fullhd-h1-font-size
+
+                & input[type="number"]
+                    height: $fullhd-static-el-height - 8px
+                    font-size: $fullhd-buttons-font-size - 5px
+
+            &-select
+                height: $fullhd-static-el-height - 10px
+                font-size: $fullhd-buttons-font-size - 7px
+
+                &-wrapper
+                    height: $fullhd-static-el-height
+
+    .filters
+        margin-top: 15px
+        top: 0
+
+        &-difficult
+            &-wrapper
+                & label
+                    font-size: $fullhd-buttons-font-size + 2px
+
+        &-theme
+            &-wrapper
+                & label
+                    font-size: $fullhd-h1-font-size + 2px
+
+        &-submit
+
+            font-size: $fullhd-buttons-font-size
+
+            &-wrapper
+                margin-top: 25px
+                top: 0
+                height: $fullhd-tags-field-height

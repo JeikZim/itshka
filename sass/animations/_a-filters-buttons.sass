@@ -1,0 +1,35 @@
+.tags-button-wrapper, .filters-button-wrapper
+    & .is-dissabled-buttons:hover, & .is-dissabled-buttons:focus
+        background-color: darken($buttons-disable-color, 5%)
+    & .is-enabled-buttons:hover, & .is-enabled-buttons:focus
+        background-color: darken($buttons-enable-color, 5%)
+    & .is-dissabled-buttons:active
+        background-color: darken($buttons-disable-color, 15%)
+    & .is-enabled-buttons:active
+        background-color: darken($buttons-enable-color, 15%)
+
+.tags
+    & .is-enabled-buttons:hover, & .is-enabled-buttons:focus
+        background-color: darken($buttons-enable-color, 3%)
+    & .is-enabled-buttons:active
+        background-color: darken($buttons-enable-color, 8%)
+
+    & .is-dissabled-buttons:hover, & .is-dissabled-buttons:focus
+        background-color: darken($this-white-color, 10%)
+    & .is-dissabled-buttons:active
+        background-color: darken($this-white-color, 20%)
+
+.filters-static input[type="number"]
+    &:hover, &:focus
+        appearance: none
+        background-color: darken($this-white-color, 10%)
+
+.is-hover-submit
+    &:hover
+        background-color: darken($buttons-enable-color, 3%)
+    &:focus
+        background-color: darken($buttons-enable-color, 3%)
+
+.filters-difficult-wrapper, .filters-theme-wrapper
+    &:hover
+        color: darken($this-white-color,20%)

@@ -1,0 +1,180 @@
+@import ../animations/a-article-h1
+
+.feed
+    width: $feed-width
+
+.article
+    width: calc($feed-width - 15px * 2)
+    margin-left: $side-spaces-screen-x
+    margin-bottom: $side-spaces-screen-x
+    margin-top: 10px
+
+    border-radius: 15px
+    background-color: $articles-bg-color
+
+    &-h1
+        @include flexClassic(flex-start)
+
+        @include articleTextConfig()
+
+        min-height: 15px
+        box-sizing: content-box
+        padding-top: 15px
+        padding-bottom: 10px
+
+        transition: color 0.15s
+        color: white
+        font-size: $h1-font-size
+
+    &-p
+        @include articleTextConfig()
+
+        padding-bottom: 15px
+
+        color: $articles-text-color
+        font-size: $snippet-font-size
+
+    &-info
+        @include flexClassic(flex-start)
+
+        @include articleTextConfig()
+
+        height: 45px
+
+        transition: color 0.15s
+        color: $small-text-color
+        font-size: $info-font-size
+
+        overflow-x: auto
+
+        &::-webkit-scrollbar
+            height: 0
+
+        &-wrapper
+            @include flexClassic(flex-start)
+
+            & .info-text
+                display: block
+                color: inherit
+                padding-right: 10px
+                // min-width: 55px
+
+            & svg
+                display: block
+                padding-right: 5px
+
+@media screen and ( min-width: 481px )
+
+    .main
+        @include scrollbar
+        width: $tablets-feed-width
+        overflow-y: auto
+        height: calc( 100vh - $tablets-header-size )
+
+    .feed
+        width: $tablets-feed-width
+        margin-top: 5px
+
+        overflow-y: auto
+
+        &::-webkit-scrollbar
+            width: 0
+
+    .article
+        width: calc($tablets-feed-width - 20px - 15px)
+        margin-left: $tablets-side-spaces-screen-x + 5px
+        margin-bottom: $tablets-side-spaces-screen-x
+        margin-top: 15px
+
+        border-radius: 15px
+
+        &-h1
+            font-size: $tablets-h1-font-size
+
+        &-p
+            font-size: $tablets-snippet-font-size
+
+        &-info
+            font-size: $tablets-info-font-size
+
+@media screen and ( min-width: 1024px )
+
+    .main
+        width: $small-desktops-feed-width
+        height: 100vh
+
+    .feed
+        width: $small-desktops-feed-width
+        //margin-top: 40px
+        margin-top: 0
+
+        overflow-y: hidden
+
+    .article
+        width: calc($small-desktops-feed-width - 2 * $small-desktops-side-spaces-screen-x)
+        margin-left: $small-desktops-side-spaces-screen-x
+        margin-bottom: 0
+        margin-top: 20px
+
+        border-radius: 15px
+
+        &-h1
+            font-size: $small-desktops-h1-font-size
+
+        &-p
+            font-size: $small-desktops-snippet-font-size
+
+        &-info
+            font-size: $small-desktops-info-font-size
+
+@media screen and ( min-width: 1201px )
+
+    .main
+        width: $desktops-feed-width
+        @include scrollbar
+
+    .feed
+        width: $desktops-feed-width
+
+    .article
+        width: calc($desktops-feed-width - 2 * $desktops-side-spaces-screen-x)
+        margin-left: $desktops-side-spaces-screen-x
+
+        &-h1
+            font-size: $desktops-h1-font-size
+
+        &-p
+            font-size: $desktops-snippet-font-size
+
+        &-info
+            font-size: $desktops-info-font-size
+
+@media screen and ( min-width: $fullhd-width )
+
+    .main
+        width: $fullhd-main-width
+        // height: unset
+
+    .feed
+        width: $fullhd-feed-width
+
+    .article
+        width: calc($fullhd-feed-width - 2 * $fullhd-side-spaces-screen-x)
+        margin-left: $fullhd-side-spaces-screen-x
+
+        &-h1, &-p, &-info
+            margin: 0
+            margin-left: 25px
+            margin-right: 25px
+            word-spacing: 2px
+            letter-spacing: 0.5px
+
+        &-h1
+            font-size: $fullhd-h1-font-size
+
+        &-p
+            font-size: $fullhd-snippet-font-size
+
+        &-info
+            height: 60px
+            font-size: $fullhd-info-font-size

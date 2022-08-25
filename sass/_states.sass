@@ -1,0 +1,35 @@
+.is
+    &-hidden
+        display: none
+
+        @media screen and (min-width: 1024px)
+            &.menu
+                display: block
+
+    &-visible
+        &-menu
+            left: 0
+
+    &-open
+        &-select:focus
+
+            border-bottom-left-radius: 0
+            border-bottom-right-radius: 0
+
+    &-enabled
+
+        &-buttons
+
+            background-color: $buttons-enable-color
+
+            & span, & pre
+                color: $this-white-color
+
+    &-dissabled
+
+        &-buttons
+
+            background-color: $this-white-color
+
+            & span, & pre
+                color: $menu-secondary-color
