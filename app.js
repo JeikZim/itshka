@@ -92,8 +92,8 @@ app.get('/', (req, res) => {
                     lastName: 'Багаутдинов',
                     href: mainAuthorLink,
                 },
-                id: '3',
-                href: '3',
+                id: '4',
+                href: '4',
             },
             {
                 name: 'React VS Vue VS Angular. Выбираем фреймворк для фронтендера в 2022',
@@ -106,8 +106,8 @@ app.get('/', (req, res) => {
                     lastName: 'Багаутдинов',
                     href: mainAuthorLink,
                 },
-                id: '2',
-                href: '2',
+                id: '3',
+                href: '3',
             },
             {
                 name: 'Node.js отличный выбор для качественного бэкенда.',
@@ -119,14 +119,15 @@ app.get('/', (req, res) => {
                     lastName: 'Багаутдинов',
                     href: mainAuthorLink,
                 },
-                id: '1',
-                href: '1',
+                id: '2',
+                href: '2',
             },
             {
-                name: 'Node.js отличный выбор для качественного бэкенда.',
-                snippet: 'Сегодня рассмотриваем Node.js и сравниваем с другими бэкенд-языками. Никакой субъективности только сухая статистика',
+                name: 'Введение в ExpressJS',
+                snippet:
+                    'Это первая часть краткого курса, в конце которого Вы на базовом уровне освите Express и сможете начать разрабатывать серверную часть на Node.js',
                 date: '15.08.2022',
-                readingTime: String(7),
+                readingTime: String(17),
                 author: {
                     firstName: 'Руслан',
                     lastName: 'Багаутдинов',
